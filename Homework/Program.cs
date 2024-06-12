@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,17 +13,20 @@ namespace Homework
         {
             Console.InputEncoding = Encoding.Unicode;
             Console.OutputEncoding = Encoding.Unicode;
-            string name, SignOfTheZodiac, workName;
-            int age;
+            
             Console.WriteLine("Как вас зовут?");
-            name = Console.ReadLine();
+            string name = Console.ReadLine();
+            
             Console.WriteLine("Сколько вам лет?");
-            age = Convert.ToInt32(Console.ReadLine());
+            int age = Convert.ToInt32(Console.ReadLine());
+
             Console.WriteLine("Какой ваш знак зодиака?");
-            SignOfTheZodiac = Console.ReadLine();
+            string zodiacSign = Console.ReadLine();
+
             Console.WriteLine("Где вы работаете? (пример: в офисе, на заводе)");
-            workName = Console.ReadLine();
-            Console.WriteLine($"Вас зовут {name}, вам {age}, вы {SignOfTheZodiac} и работаете {workName}");
+            string workName = Console.ReadLine();
+
+            Console.WriteLine($"Вас зовут {name}, вам {age}, вы {zodiacSign} и работаете {workName}");
         }
     }
 }
