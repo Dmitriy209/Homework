@@ -10,16 +10,16 @@ namespace Homework
     {
         static void Main(string[] args)
         {
-            int thisInt = -33000;
-            float thisFloat = 6.8f;
-            char thisChar = 'C';
-            string thisString = "Строка";
-            bool thisTrue = true;
-            double thisDouble = 6.8;
-            uint thisUInt = 33000;
-            short thisShort = -32000;
-            ushort thisUShort = 32000;
-            long thisMaxValue = long.MaxValue;
+            int moneyAfterLearning = -180000;
+            float piSixAfterDot = 3.1415926535897931f;
+            char letterC = 'C';
+            string name = "Иван";
+            bool isTrue = true;
+            double piSixteenAfterDot = 3.1415926535897931;
+            uint moneyBeforeLearning = 180000;
+            short moneyBeforePayday = -32000;
+            ushort moneyAfterPayday = 32000;
+            long peopleOnEarth = 8108000000;
         }
     }
 }
