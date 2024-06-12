@@ -10,16 +10,19 @@ namespace Homework
     {
         static void Main(string[] args)
         {
-            int moneyAfterLearning = -180000;
-            float piSixAfterDot = 3.1415926535897931f;
-            char letterC = 'C';
-            string name = "Иван";
-            bool isTrue = true;
-            double piSixteenAfterDot = 3.1415926535897931;
-            uint moneyBeforeLearning = 180000;
-            short moneyBeforePayday = -32000;
-            ushort moneyAfterPayday = 32000;
-            long peopleOnEarth = 8108000000;
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
+            string name, SignOfTheZodiac, workName;
+            int age;
+            Console.WriteLine("Как вас зовут?");
+            name = Console.ReadLine();
+            Console.WriteLine("Сколько вам лет?");
+            age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Какой ваш знак зодиака?");
+            SignOfTheZodiac = Console.ReadLine();
+            Console.WriteLine("Где вы работаете? (пример: в офисе, на заводе)");
+            workName = Console.ReadLine();
+            Console.WriteLine($"Вас зовут {name}, вам {age}, вы {SignOfTheZodiac} и работаете {workName}");
         }
     }
 }
