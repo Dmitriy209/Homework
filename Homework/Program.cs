@@ -11,12 +11,12 @@ namespace Homework
     {
         static void Main(string[] args)
         {
-            const int row = 3;
-            const int picture = 52;
+            int rows = 3;
+            int picture = 52;
             
-            int fullRow = picture / row;
+            int fullRow = picture / rows;
             
-            int restPictures = picture % row;
+            int restPictures = picture % rows;
 
             Console.WriteLine($"Можно будет вывести {fullRow} полностью заполненных рядов.");
             Console.WriteLine($"Количество картинок сверх меры: {restPictures}.");
