@@ -18,7 +18,10 @@ namespace Homework
                 $"Вы заглядываете в пивной бокал и видите, что там {bearGlass}.\n" +
                 "Официант замечает это и ловким движением руки переливает напитки в нужные ёмкости.");
 
-            (vodkaGlass, bearGlass) = (bearGlass, vodkaGlass);
+            string magicMixer = vodkaGlass; 
+
+            vodkaGlass = bearGlass;
+            bearGlass = magicMixer;
 
             Console.WriteLine($"Теперь вы видите, что в рюмке {vodkaGlass}, а в пивном бокале {bearGlass}");
         }
