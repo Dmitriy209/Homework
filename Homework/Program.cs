@@ -11,22 +11,15 @@ namespace Homework
     {
         static void Main(string[] args)
         {
-            Console.InputEncoding = Encoding.Unicode;
-            Console.OutputEncoding = Encoding.Unicode;
+            const int row = 3;
+            const int picture = 52;
             
-            Console.WriteLine("Как вас зовут?");
-            string name = Console.ReadLine();
+            int fullRow = picture / row;
             
-            Console.WriteLine("Сколько вам лет?");
-            int age = Convert.ToInt32(Console.ReadLine());
+            int restPictures = picture % row;
 
-            Console.WriteLine("Какой ваш знак зодиака?");
-            string zodiacSign = Console.ReadLine();
-
-            Console.WriteLine("Где вы работаете? (пример: в офисе, на заводе)");
-            string workName = Console.ReadLine();
-
-            Console.WriteLine($"Вас зовут {name}, вам {age}, вы {zodiacSign} и работаете {workName}");
+            Console.WriteLine($"Можно будет вывести {fullRow} полностью заполненных рядов.");
+            Console.WriteLine($"Количество картинок сверх меры: {restPictures}.");
         }
     }
 }
