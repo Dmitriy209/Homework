@@ -11,15 +11,16 @@ namespace Homework
     {
         static void Main(string[] args)
         {
-            int rows = 3;
-            int picture = 52;
-            
-            int fullRow = picture / rows;
-            
-            int restPictures = picture % rows;
+            string vodkaGlass = "пиво";
+            string bearGlass = "водка";
 
-            Console.WriteLine($"Можно будет вывести {fullRow} полностью заполненных рядов.");
-            Console.WriteLine($"Количество картинок сверх меры: {restPictures}.");
+            Console.WriteLine($"Вы заглядваете в рюмку и видете, что там {vodkaGlass}.\n" +
+                $"Вы заглядываете в пивной бокал и видите, что там {bearGlass}.\n" +
+                "Официант замечает это и ловким движением руки переливает напитки в нужные ёмкости.");
+
+            (vodkaGlass, bearGlass) = (bearGlass, vodkaGlass);
+
+            Console.WriteLine($"Теперь вы видите, что в рюмке {vodkaGlass}, а в пивном бокале {bearGlass}");
         }
     }
 }
