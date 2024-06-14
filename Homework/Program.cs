@@ -23,7 +23,7 @@ namespace Homework
             uint playerCrystal = Convert.ToUInt32(Console.ReadLine());
 
             traderMoney = crystalPrice * playerCrystal;
-            playerMoney = playerMoney - crystalPrice * playerCrystal;
+            playerMoney -= traderMoney;
             
             crystalTrader -= playerCrystal;
             
