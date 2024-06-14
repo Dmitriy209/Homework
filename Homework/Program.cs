@@ -12,23 +12,23 @@ namespace Homework
         static void Main(string[] args)
         {
             Console.Write("Вы стоите перед торговцем кристаллами, заглядываете в свой кошелёк и видите там (введите количество золота): ");
-            uint moneyPlayer = Convert.ToUInt32(Console.ReadLine());
+            uint playerMoney = Convert.ToUInt32(Console.ReadLine());
 
             uint crystalTrader = 10;
-            uint moneyCrystal = 10;
-            uint moneyTrader = 0;
+            uint crystalPrice = 10;
+            uint traderMoney = 0;
             
-            Console.WriteLine($"Приветсвую путник, хотите купить кристаллы? У меня есть {crystalTrader}, по {moneyCrystal} за штуку.");
+            Console.WriteLine($"Приветсвую путник, хотите купить кристаллы? У меня есть {crystalTrader}, по {crystalPrice} за штуку.");
             Console.Write("Сколько вы хотите купить? ");
-            uint crystalPlayer = Convert.ToUInt32(Console.ReadLine());
+            uint playerCrystal = Convert.ToUInt32(Console.ReadLine());
 
-            moneyTrader = moneyCrystal * crystalPlayer;
-            moneyPlayer = moneyPlayer - moneyCrystal * crystalPlayer;
+            traderMoney = crystalPrice * playerCrystal;
+            playerMoney = playerMoney - crystalPrice * playerCrystal;
             
-            crystalTrader = crystalTrader - crystalPlayer;
+            crystalTrader -= playerCrystal;
             
-            Console.WriteLine($"У торговца осталось {moneyTrader} золота и {crystalTrader} кристаллов");
-            Console.WriteLine($"Теперь у вас {moneyPlayer} золота и {crystalPlayer} кристаллов");
+            Console.WriteLine($"У торговца осталось {traderMoney} золота и {crystalTrader} кристаллов");
+            Console.WriteLine($"Теперь у вас {playerMoney} золота и {playerCrystal} кристаллов");
         }
     }
 }
