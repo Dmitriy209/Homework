@@ -11,19 +11,24 @@ namespace Homework
     {
         static void Main(string[] args)
         {
-            string vodkaGlass = "пиво";
-            string bearGlass = "водка";
+            Console.Write("Вы стоите перед торговцем кристаллами, заглядываете в свой кошелёк и видите там (введите количество золота): ");
+            uint moneyPlayer = Convert.ToUInt32(Console.ReadLine());
 
-            Console.WriteLine($"Вы заглядваете в рюмку и видете, что там {vodkaGlass}.\n" +
-                $"Вы заглядываете в пивной бокал и видите, что там {bearGlass}.\n" +
-                "Официант замечает это и ловким движением руки переливает напитки в нужные ёмкости.");
+            uint crystalTrader = 10;
+            uint moneyCrystal = 10;
+            uint moneyTrader = 0;
+            
+            Console.WriteLine($"Приветсвую путник, хотите купить кристаллы? У меня есть {crystalTrader}, по {moneyCrystal} за штуку.");
+            Console.Write("Сколько вы хотите купить? ");
+            uint crystalPlayer = Convert.ToUInt32(Console.ReadLine());
 
-            string magicMixer = vodkaGlass; 
-
-            vodkaGlass = bearGlass;
-            bearGlass = magicMixer;
-
-            Console.WriteLine($"Теперь вы видите, что в рюмке {vodkaGlass}, а в пивном бокале {bearGlass}");
+            moneyTrader = moneyCrystal * crystalPlayer;
+            moneyPlayer = moneyPlayer - moneyCrystal * crystalPlayer;
+            
+            crystalTrader = crystalTrader - crystalPlayer;
+            
+            Console.WriteLine($"У торговца осталось {moneyTrader} золота и {crystalTrader} кристаллов");
+            Console.WriteLine($"Теперь у вас {moneyPlayer} золота и {crystalPlayer} кристаллов");
         }
     }
 }
