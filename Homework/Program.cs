@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Homework
 {
@@ -15,9 +11,12 @@ namespace Homework
             uint linePeople = Convert.ToUInt32(Console.ReadLine());
             
             uint waitingOnePeople = 10;
+            uint minutesInHour = 60;
+
+            uint waitingTime = waitingOnePeople * linePeople;
             
-            uint waitingLineHour = waitingOnePeople * linePeople / 60;
-            uint waitingLineMinutes = waitingOnePeople * linePeople % 60;
+            uint waitingLineHour = waitingTime / minutesInHour;
+            uint waitingLineMinutes = waitingTime % minutesInHour;
 
             Console.WriteLine($"Вы должны отстоять в очереди {waitingLineHour} часа и {waitingLineMinutes} минут.");
         }
