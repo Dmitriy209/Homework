@@ -7,18 +7,16 @@ namespace Homework
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите количество пациентов: ");
-            uint linePeople = Convert.ToUInt32(Console.ReadLine());
-            
-            uint waitingOnePeople = 10;
-            uint minutesInHour = 60;
+            Console.WriteLine("Введите сообщение:");
+            string message = Console.ReadLine();
 
-            uint waitingTime = waitingOnePeople * linePeople;
-            
-            uint waitingLineHour = waitingTime / minutesInHour;
-            uint waitingLineMinutes = waitingTime % minutesInHour;
+            Console.WriteLine("Введите количество повторений сообщения:");
+            int amountMessage = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine($"Вы должны отстоять в очереди {waitingLineHour} часа и {waitingLineMinutes} минут.");
+            for (int i = 0; i < amountMessage; i++)
+            {
+                Console.WriteLine(message);
+            }
         }
     }
 }
