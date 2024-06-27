@@ -1,39 +1,95 @@
 using System;
 
-namespace Readlnt
+namespace UIElement
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int userNumber = GetUserNumber();
+            const string ButtonExit = "exit";
 
-            Console.WriteLine($"Вы ввели {userNumber}.");
-        }
+            bool isRunnung = true;
 
-        private static int GetUserNumber()
-        {
-            int userNumber = 0;
+            string hero = "    _\n" +
+                "  0/u\n" +
+                " <M\n" +
+                "_/|";
 
-            bool isRunning = true;
-
-            while (isRunning)
+            while (isRunnung)
             {
-                Console.WriteLine("Введите целочисленное число:");
-                string inputLine = Console.ReadLine();
+                Console.WriteLine($"Введите {ButtonExit}, чтобы выйти или что-нибудь, чтобы продолжить.");
+                string userInput = Console.ReadLine();
 
-                bool isUserNumber = int.TryParse(inputLine, out userNumber);
+                Console.Clear();
 
-                if (isUserNumber)
-                    isRunning = false;
-                else
+                switch (userInput)
                 {
-                    Console.Clear();
-                    Console.WriteLine($"{inputLine} - не целочисленное число.");
+                    case ButtonExit:
+                        isRunnung = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Сколько процентов здоровья у вашего персонаж?");
+                        int health = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Сколько максимум здоровья у вашего персонажа?");
+                        int maxHealth = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Сколько процентов маны у вашего персонажа?");
+                        int mana = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Сколько максимум маны у вашего персонажа?");
+                        int maxMana = Convert.ToInt32(Console.ReadLine());
+
+                        ConsoleColor healthBarColor = ConsoleColor.Green;
+                        ConsoleColor manaBarColor = ConsoleColor.Blue;
+
+                        int healthBarPositionX = 0;
+                        int healthBarPositionY = 0;
+
+                        int manaBarPositionX = 0;
+                        int manaBarPositionY = 1;
+
+                        Console.Clear();
+
+                        DrawBar(health, maxHealth, healthBarColor, 0, 0);
+                        DrawBar(mana, maxMana, manaBarColor, 0, 1);
+
+                        Console.WriteLine("\n" + hero);
+                        break;
                 }
             }
+        }
 
-            return userNumber;
+        static void DrawBar(int percentDraw, int lengthBar, ConsoleColor color = ConsoleColor.Green, int x = 0, int y = 0)
+        {
+            ConsoleColor defaultColor = Console.BackgroundColor;
+
+            string bar = "";
+
+            int oneHundredPercent = 100;
+
+            int valueBar = percentDraw * lengthBar / oneHundredPercent;
+            int valueBarRemainder = percentDraw * lengthBar % oneHundredPercent;
+
+            if (valueBar == 0 || valueBarRemainder > 0)
+                valueBar = 1;
+
+            for (int i = 0; i < valueBar; i++)
+                bar += "#";
+
+            Console.SetCursorPosition(x, y);
+            Console.Write('[');
+            Console.BackgroundColor = color;
+            Console.Write(bar);
+            Console.BackgroundColor = defaultColor;
+
+            bar = "";
+
+            for (int i = valueBar; i < lengthBar; i++)
+                bar += " ";
+
+            Console.Write(bar + "]");
         }
     }
 }
